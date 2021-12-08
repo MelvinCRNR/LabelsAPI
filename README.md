@@ -6,4 +6,15 @@ Afin de d'arriver à notre objectif de prédiction du sentiment d'une phrase, no
 Pour pouvoir travaillier sur nos tweets, il a fallu les 'clean' pour ne pas avoir de biais au moment de la prédictions. Nous avons donc enlevé les caractères spéciaux, les '#', les mots possèdant 2 caractères ou moins pour obtenir de meileurs résultats et que l'entraînement de l'algorithme soit bon.
 ## L'application Flask 'app.py'
 Nous avons développer une application permettant à l'utilisateur de rentrer un texte dans l'URL pour pouvoir en déduire son sentiment. 
-## Comment utiliser l'application.
+## Comment utiliser l'application
+### Prérequis
+Posséder python, pip et les bibliothèques suivantes : 
+pip install flask
+pip install pandas
+pip install scikit-learn
+pip intall NLTK
+python -m nltk.downloader stopwords
+pip install stop-words
+pip install joblib
+Une fois ces modules intallés, ouvrez l'invité de commande, placez-vous dans le fichier du programme, et exécutez la commande suivante : 
+flask run

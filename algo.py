@@ -10,7 +10,7 @@ from sklearn.svm import SVC
 #Si les librairies sont chargées.
 print('libs load')
 
-df=pd.read_csv('data/labels.csv')
+df=pd.read_csv('labels.csv')
 #Si df est chargée.
 print('df loaded')
 

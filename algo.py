@@ -7,10 +7,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.multiclass import OneVsRestClassifier
 from stop_words import get_stop_words
 from sklearn.svm import SVC
+from joblib import dump, load
 #Si les librairies sont chargées.
 print('libs load')
 
-df=pd.read_csv('labels.csv')
+df=pd.read_csv('data/labels.csv')
 #Si df est chargée.
 print('df loaded')
 
@@ -38,7 +39,17 @@ clf=make_pipeline(
 #Si le make_pipeline a fonctionné.
 print('pipeline worked')
 
-X = df['tweet']
-y = df['class']
+df2=df.head(10000)
 
-clf.fit(X, y)
+X = df2['tweet']
+y = df2['class']
+
+print(clf.fit(X, y))
+
+dump(clf, 'labels_dump.joblib')
+
+print('Dump done')
+
+clf = load('labels_dump.joblib')
+
+print('Load done')
